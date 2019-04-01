@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2019-04-01T00:57:40 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Medicamentos" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="636a4293-ffaa-447a-8ab8-c29d4cbe8a9c">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<queryString language="xPath">
+		<![CDATA[//impressao/Medicamentos/medicamento[flagEspecial='N']]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="3"/>
+	</title>
+	<detail>
+		<band height="53" splitType="Stretch">
+			<rectangle>
+				<reportElement x="1" y="-3" width="554" height="15" isPrintWhenDetailOverflows="true" forecolor="#000000" backcolor="#D6D6D6" uuid="ac63c841-07fd-42a9-a718-07ff18441740">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="1" y="-3" width="554" height="15" isPrintWhenDetailOverflows="true" uuid="08d16399-b708-4d85-942b-58c01e993b21">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MEDICAMENTOS PRESCRITOS]]></text>
+			</staticText>
+			<subreport>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="12" width="555" height="41" isPrintWhenDetailOverflows="true" uuid="97b4fb50-189b-4339-98da-d61b8ccf8976">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).dataSource("//impressao/Medicamentos/medicamento[flagEspecial='N']")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["../Comuns/MEDICAMENTOS_PRESCRITOS.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

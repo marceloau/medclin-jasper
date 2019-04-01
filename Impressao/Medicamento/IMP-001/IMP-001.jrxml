@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2019-04-01T01:03:16 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Medicamentos" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryNewPage="true" uuid="f0c9ed8a-1544-47e0-bc36-ec0002f9b12a">
+	<style name="Style1">
+		<conditionalStyle>
+			<style/>
+		</conditionalStyle>
+	</style>
+	<queryString language="xPath">
+		<![CDATA[//impressao]]>
+	</queryString>
+	<field name="nomePaciente" class="java.lang.String">
+		<fieldDescription><![CDATA[//Consulta/paciente/nomePessoa]]></fieldDescription>
+	</field>
+	<field name="dataNascimento" class="java.lang.String">
+		<fieldDescription><![CDATA[//Consulta/paciente/dataNascimento]]></fieldDescription>
+	</field>
+	<field name="nomePlanoSaude" class="java.lang.String">
+		<fieldDescription><![CDATA[//Consulta/paciente/listaPlanoSaudePaciente[1]/operadora/nomeOperadora]]></fieldDescription>
+	</field>
+	<field name="tipoPlanoSaude" class="java.lang.String">
+		<fieldDescription><![CDATA[//Consulta/paciente/listaPlanoSaudePaciente[1]/tipoPlanoSaude/nomeTipoPlano]]></fieldDescription>
+	</field>
+	<field name="dataConsulta" class="java.lang.String">
+		<fieldDescription><![CDATA[//Consulta/dataConsulta]]></fieldDescription>
+	</field>
+	<field name="sexo" class="java.lang.String">
+		<fieldDescription><![CDATA[//Consulta/paciente/sexo]]></fieldDescription>
+	</field>
+	<field name="cpf" class="java.lang.String">
+		<fieldDescription><![CDATA[//Consulta/paciente/numeroCpf]]></fieldDescription>
+	</field>
+	<field name="existeMedicamentoEspecial" class="java.lang.String">
+		<fieldDescription><![CDATA[//impressao/Medicamentos/medicamento[flagEspecial='S']]]></fieldDescription>
+	</field>
+	<variable name="planoSaude" class="java.lang.String">
+		<variableExpression><![CDATA[$F{nomePlanoSaude} + " - " + $F{tipoPlanoSaude}]]></variableExpression>
+		<initialValueExpression><![CDATA[$F{nomePlanoSaude} + " - " + $F{tipoPlanoSaude}]]></initialValueExpression>
+	</variable>
+	<group name="Informacao do Paciente" isStartNewPage="true"/>
+	<group name="Medicamentos" isStartNewPage="true">
+		<groupHeader>
+			<band height="50">
+				<subreport>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="555" height="50" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="949f80d2-67e4-4a18-acf2-dd2ddd730fee">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).dataSource("//impressao/Medicamentos")]]></dataSourceExpression>
+					<subreportExpression><![CDATA["../Comuns/DOC_MEDICAMENTOS_COMUNS.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Group1"/>
+	<group name="Footer" isReprintHeaderOnEachPage="true" keepTogether="true"/>
+	<pageHeader>
+		<band height="172">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<rectangle>
+				<reportElement mode="Transparent" x="1" y="2" width="554" height="104" uuid="445bb129-db01-45ec-95be-9f0629544cff"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="497" y="-18" width="55" height="15" forecolor="#FFFFFF" uuid="ac677169-0314-4319-89e8-555bb574b14f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[V0.1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="459" y="31" width="94" height="20" forecolor="#CCB629" uuid="dcd3c683-2b69-4f1c-8efa-e7e78a01f520"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CREMEPE 4122]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="2" width="372" height="30" forecolor="#CCB629" uuid="4716d56c-da07-4a11-ad28-04810282c789"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dr. Hildebrando Spinelli]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="1" y="106" width="554" height="66" uuid="fe0e9b8d-2cf1-4818-867d-cc05a21f2b83">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="1" y="106" width="554" height="15" forecolor="#000000" backcolor="#D6D6D6" uuid="2b451940-4c04-4c6e-94b7-6b259ff3745b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="1" y="106" width="554" height="15" uuid="29ff6bf0-86af-4c9d-b370-a428adb8dc9d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Informações do Paciente]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="1" y="121" width="554" height="51" uuid="11736754-37fd-4658-a3f4-7361da7a82a6">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</rectangle>
+			<line>
+				<reportElement x="1" y="146" width="554" height="1" uuid="4c7cdff1-4a90-4622-939f-bfe6133297af">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="1" y="121" width="553" height="12" uuid="745106a8-0b67-44da-ba4b-d24b8ccc9cb9">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="1"/>
+				</textElement>
+				<text><![CDATA[NOME DO PACIENTE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1" y="133" width="553" height="14" uuid="7e9ccdf1-bac7-456c-917b-6216dea5e2f0">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="false"/>
+					<paragraph leftIndent="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nomePaciente}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="147" width="553" height="12" uuid="8152359c-dcac-4fef-b7a9-45862a8c4fc8">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="8"/>
+					<paragraph leftIndent="1"/>
+				</textElement>
+				<text><![CDATA[DATA DA CONSULTA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1" y="159" width="553" height="13" uuid="54c8ee79-99a9-4a59-a67a-463c3af4bc9f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="false"/>
+					<paragraph leftIndent="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format(new SimpleDateFormat("yyyy-MM-dd").parse($F{dataConsulta}))]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<pageFooter>
+		<band height="142">
+			<textField>
+				<reportElement x="299" y="95" width="255" height="15" forecolor="#CCB629" uuid="547e177e-dcf2-4dfd-b966-d0fca88627ef">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="10.5" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["EMPRESARIAL ALBERT EINSTEIN"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="80" width="94" height="15" forecolor="#CCB629" uuid="f89dba5e-1f1b-42fa-96f2-edcba5495c56">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="10.5" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CONSULTÓRIO"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="229" y="111" width="325" height="15" forecolor="#CCB629" uuid="5b3580e8-4057-42eb-b82a-ab69dc2f6177">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="10.5" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Rua Frei Matias Teves, 280 - Sala 411 - Ilha do Leite"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="159" y="127" width="395" height="15" forecolor="#CCB629" uuid="75ed9f81-45e4-461c-a60d-1a0498b3f5a1">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="10.5" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Recife/PE CEP: 50070-450 - Fones: (81) 3421.3422 / 98844.8664 / 99646.9330"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="95" width="260" height="15" forecolor="#CCB629" uuid="06e586e0-f883-465f-b4b1-df0f824ceebd">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="10.5" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["E-mail: consultoriospinelli@hotmail.com"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="127" y="44" width="300" height="1" uuid="6120b9ee-49bd-4987-9778-4a0ffaa5a448">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="171" y="7" width="214" height="10" uuid="8f864ca9-e194-4caa-bd7e-267dc21fb337"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Recife/PE, " + new SimpleDateFormat("d 'de' MMMM 'de' yyyy").format(new Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="171" y="50" width="214" height="12" uuid="744835ff-0978-4391-b544-60582c07b91f"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[HILDEBRANDO SPINELLI PACHECO JUNIOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="68" width="52" height="12" uuid="fdc3cefb-ecca-42a6-a319-95600b3d4b28"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[CRM: 4122]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="268" y="68" width="90" height="12" uuid="77eac347-8688-4e88-9da2-0f7e5255f311"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[CPF: 097.650.774-91]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="236">
+			<printWhenExpression><![CDATA[$F{existeMedicamentoEspecial} != null]]></printWhenExpression>
+			<subreport>
+				<reportElement x="-20" y="0" width="595" height="236" isRemoveLineWhenBlank="true" uuid="6721ecde-d716-49f9-8a07-6578e55c1268"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).dataSource("//impressao")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["../IMP-001/MEDICAMENTOS_ESPECIAIS.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>
