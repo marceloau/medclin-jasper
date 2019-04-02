@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2019-04-01T00:41:55 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MEDICAMENTOS_PRESCRITOS" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="21f3ae22-33f8-4268-8d36-4a02cd672150">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Documento"/>
+	<queryString language="XPath">
+		<![CDATA[//impressao/Medicamentos/medicamento[flagEspecial='S']]]>
+	</queryString>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[nomeMedicamento]]></fieldDescription>
+	</field>
+	<field name="composicao" class="java.lang.String">
+		<fieldDescription><![CDATA[composicao]]></fieldDescription>
+	</field>
+	<field name="posologia" class="java.lang.String">
+		<fieldDescription><![CDATA[posologia]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="109" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<rectangle>
+				<reportElement mode="Transparent" x="1" y="0" width="554" height="109" uuid="43d54622-471c-4bcb-9524-7126c769b33d">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+			</rectangle>
+			<textField>
+				<reportElement x="4" y="9" width="49" height="15" forecolor="#CCB629" uuid="a74b884a-e044-40d7-8468-2412edf1bf44">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10.5" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Nome:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="34" width="80" height="15" forecolor="#CCB629" uuid="7690dab4-23ad-4a87-94ad-9bccb8f77df3">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10.5" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Composição:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="59" width="69" height="15" forecolor="#CCB629" uuid="82608ec7-f49b-46a7-97da-452e585e8660">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10.5" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Posologia:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="53" y="9" width="500" height="25" uuid="8fbb3359-fa31-4bc9-9166-36d003e7c8f7">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="SansSerif" size="10.5" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome} != null ? $F{nome}.toUpperCase() : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="83" y="34" width="470" height="24" uuid="07acff4a-f7d9-4d73-bbd6-203868e27f02">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="SansSerif" size="10.5" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{composicao} != null ? $F{composicao} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="73" y="58" width="480" height="50" uuid="766a230a-03a9-45e6-93a8-e88314a369ad">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="SansSerif" size="10.5" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{posologia} != null ? $F{posologia} : ""]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
