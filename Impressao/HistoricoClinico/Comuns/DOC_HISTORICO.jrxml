@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2019-04-02T23:59:55 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DOC_HISTORICO" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="961a8af2-0507-4a66-86a5-446e2243fa16">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Documento"/>
+	<queryString language="xPath">
+		<![CDATA[//impressao/Consultas/Consulta]]>
+	</queryString>
+	<field name="dataConsulta" class="java.lang.String">
+		<fieldDescription><![CDATA[dataConsulta]]></fieldDescription>
+	</field>
+	<field name="historiaClinica" class="java.lang.String">
+		<fieldDescription><![CDATA[historicoClinico]]></fieldDescription>
+	</field>
+	<sortField name="dataConsulta" order="Descending"/>
+	<detail>
+		<band height="109" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Transparent" x="1" y="0" width="554" height="109" uuid="87779839-3486-471b-b750-485c003b7b3a">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+			</rectangle>
+			<textField>
+				<reportElement x="4" y="9" width="116" height="15" forecolor="#CCB629" uuid="52b7cc01-402e-40e8-b430-c65ede005b62">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10.5" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Data da Consulta:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="34" width="117" height="15" forecolor="#CCB629" uuid="9fc493be-1141-44f0-a998-d096510556bb">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10.5" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["História Clínica:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="9" width="433" height="25" uuid="140891ff-ca62-42b3-a3d6-1094aa5f64ca">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="SansSerif" size="10.5" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dataConsulta} != null ? new SimpleDateFormat("dd/MM/yyyy").format(new SimpleDateFormat("yyyy-MM-dd").parse($F{dataConsulta})) : "Não Informada"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="34" width="433" height="24" uuid="52301271-dbdb-4d62-bcd2-cb57d5ed7d9a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="SansSerif" size="10.5" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{historiaClinica} != null ? $F{historiaClinica} : "Não informada"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

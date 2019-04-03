@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
-<!-- 2019-04-03T00:16:25 -->
+<!-- 2019-04-03T00:12:26 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Medicamentos" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="636a4293-ffaa-447a-8ab8-c29d4cbe8a9c">
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<queryString language="xPath">
-		<![CDATA[//impressao/Medicamentos/medicamento]]>
+		<![CDATA[//impressao/Exames/Exame]]>
 	</queryString>
 	<background>
 		<band splitType="Stretch"/>
@@ -28,7 +28,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="11" isBold="true"/>
 				</textElement>
-				<text><![CDATA[MEDICAMENTOS PRESCRITOS]]></text>
+				<text><![CDATA[SOLICITAÇÕES DE EXAME]]></text>
 			</staticText>
 			<subreport>
 				<reportElement stretchType="RelativeToTallestObject" x="0" y="12" width="555" height="41" isPrintWhenDetailOverflows="true" uuid="97b4fb50-189b-4339-98da-d61b8ccf8976">
@@ -37,8 +37,8 @@
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 				</reportElement>
-				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).dataSource("//impressao/Medicamentos/medicamento")]]></dataSourceExpression>
-				<subreportExpression><![CDATA["../Comuns/MEDICAMENTOS_PRESCRITOS.jasper"]]></subreportExpression>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).dataSource("//impressao/Exames/Exame")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["../Comuns/DOC_EXAMES_SOLICITADOS.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
 	</detail>

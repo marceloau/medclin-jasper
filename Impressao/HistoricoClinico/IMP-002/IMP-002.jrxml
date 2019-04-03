@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
-<!-- 2019-04-02T07:01:13 -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="HistoricClinico" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryNewPage="true" uuid="f0c9ed8a-1544-47e0-bc36-ec0002f9b12a">
+<!-- 2019-04-03T00:17:02 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="HistoricClinico" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f0c9ed8a-1544-47e0-bc36-ec0002f9b12a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Documento"/>
 	<style name="Style1">
 		<conditionalStyle>
 			<style/>
@@ -11,25 +12,25 @@
 		<![CDATA[//impressao]]>
 	</queryString>
 	<field name="nomePaciente" class="java.lang.String">
-		<fieldDescription><![CDATA[//Consulta/paciente/nomePessoa]]></fieldDescription>
+		<fieldDescription><![CDATA[//Consultas/Consulta[1]/paciente/nomePessoa]]></fieldDescription>
 	</field>
 	<field name="dataNascimento" class="java.lang.String">
-		<fieldDescription><![CDATA[//Consulta/paciente/dataNascimento]]></fieldDescription>
+		<fieldDescription><![CDATA[//Consultas/Consulta[1]/paciente/dataNascimento]]></fieldDescription>
 	</field>
 	<field name="nomePlanoSaude" class="java.lang.String">
-		<fieldDescription><![CDATA[//Consulta/paciente/listaPlanoSaudePaciente[1]/operadora/nomeOperadora]]></fieldDescription>
+		<fieldDescription><![CDATA[//Consultas/Consulta[1]/paciente/listaPlanoSaudePaciente[1]/operadora/nomeOperadora]]></fieldDescription>
 	</field>
 	<field name="tipoPlanoSaude" class="java.lang.String">
-		<fieldDescription><![CDATA[//Consulta/paciente/listaPlanoSaudePaciente[1]/tipoPlanoSaude/nomeTipoPlano]]></fieldDescription>
+		<fieldDescription><![CDATA[//Consultas/Consulta[1]/paciente/listaPlanoSaudePaciente[1]/tipoPlanoSaude/nomeTipoPlano]]></fieldDescription>
 	</field>
 	<field name="dataConsulta" class="java.lang.String">
-		<fieldDescription><![CDATA[//Consulta/dataConsulta]]></fieldDescription>
+		<fieldDescription><![CDATA[//Consultas/Consulta[1]/dataConsulta]]></fieldDescription>
 	</field>
 	<field name="sexo" class="java.lang.String">
-		<fieldDescription><![CDATA[//Consulta/paciente/sexo]]></fieldDescription>
+		<fieldDescription><![CDATA[//Consultas/Consulta[1]/paciente/sexo]]></fieldDescription>
 	</field>
 	<field name="cpf" class="java.lang.String">
-		<fieldDescription><![CDATA[//Consulta/paciente/numeroCpf]]></fieldDescription>
+		<fieldDescription><![CDATA[//Consultas/Consulta[1]/paciente/numeroCpf]]></fieldDescription>
 	</field>
 	<field name="existeMedicamentoEspecial" class="java.lang.String">
 		<fieldDescription><![CDATA[//impressao/Medicamentos/medicamento[flagEspecial='S']]]></fieldDescription>
@@ -38,6 +39,34 @@
 		<variableExpression><![CDATA[$F{nomePlanoSaude} + " - " + $F{tipoPlanoSaude}]]></variableExpression>
 		<initialValueExpression><![CDATA[$F{nomePlanoSaude} + " - " + $F{tipoPlanoSaude}]]></initialValueExpression>
 	</variable>
+	<group name="HistoricoClinico">
+		<groupHeader>
+			<band height="51">
+				<subreport>
+					<reportElement x="0" y="0" width="555" height="51" uuid="e94f111d-df82-4629-88d4-1781939caaf1">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).dataSource("//impressao/Consultas")]]></dataSourceExpression>
+					<subreportExpression><![CDATA["../Comuns/DOC_HISTORICO_CLINICO.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Exames">
+		<groupHeader>
+			<band height="50">
+				<subreport>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="555" height="50" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="40a0b7ae-bd3b-44f3-91c5-aae54de70fe2">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).dataSource("//impressao/Exames")]]></dataSourceExpression>
+					<subreportExpression><![CDATA["../Comuns/DOC_EXAMES.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</groupHeader>
+	</group>
 	<group name="Medicamentos" isStartNewPage="true">
 		<groupHeader>
 			<band height="50">
@@ -52,7 +81,6 @@
 			</band>
 		</groupHeader>
 	</group>
-	<group name="Group1"/>
 	<group name="Footer" isReprintHeaderOnEachPage="true" keepTogether="true"/>
 	<pageHeader>
 		<band height="172">
@@ -147,7 +175,7 @@
 					<font fontName="Arial" size="8"/>
 					<paragraph leftIndent="1"/>
 				</textElement>
-				<text><![CDATA[DATA DA CONSULTA]]></text>
+				<text><![CDATA[CPF]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="1" y="159" width="553" height="13" uuid="54c8ee79-99a9-4a59-a67a-463c3af4bc9f"/>
@@ -155,7 +183,7 @@
 					<font fontName="Arial" size="7" isBold="false"/>
 					<paragraph leftIndent="1"/>
 				</textElement>
-				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format(new SimpleDateFormat("yyyy-MM-dd").parse($F{dataConsulta}))]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{cpf} != null ? ($F{cpf}.substring(0, 3) + "." + $F{cpf}.substring(3, 6) + "." + $F{cpf}.substring(6, 9) + "-" + $F{cpf}.substring(9, 11)) : ""]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>
